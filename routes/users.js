@@ -9,7 +9,7 @@ router.get("/profile", auth.isAuth, UsersController.getProfile);
 
 router.post("/sign_in", UsersController.signin);
 router.post("/sign_up", UsersController.register);
-router.patch("profile", auth.isAuth, UsersController.updUser);
-router.delete("/:id", UsersController.delUser);
-router.post("updatePassword", auth.isAuth, UsersController.updatePassword);
+router.patch("/profile", auth.isAuth, UsersController.updateUser);
+router.delete("/:id", UsersController.deleteUser);
+router.post("/updatePassword", auth.isAuth, UsersController.updatePassword);
 module.exports = router;

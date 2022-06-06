@@ -7,28 +7,26 @@ const cookieParser = require("cookie-parser");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const postsRouter = require("./routes/posts");
+const uploadRouter = require("./routes/upload");
 const { resErrorProd, resErrorDev } = require("./service/resError");
 require("./utils/connect.js");
 const app = express();
 
-//同步的程式出錯，程式出現重大錯誤時
 process.on("uncaughtException", (err) => {
-  // 記錄錯誤下來，等到服務都處理完後，停掉該 process
   console.error("漏洞：Uncaughted Exception");
   console.error(err);
   process.exit(1);
 });
-// app.use(): 代表整個程式都能使用這個 middleware
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-//靜態資源路徑設定
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/posts", postsRouter);
+app.use("/user", usersRouter);
+app.use("/post", postsRouter);
+app.use("/upload", uploadRouter);
 
 app.use(function (req, res, next) {
   next(createError(404)); // 呼叫 next 把控制權轉移到下一個 middleware
@@ -60,7 +58,6 @@ app.use(function (err, req, res, next) {
  */
 process.on("unhandledRejection", (err, promise) => {
   console.error("漏洞：未捕捉到的 rejection：", promise, "原因：", err);
-  // 記錄於 log 上
 });
 
 module.exports = app;
