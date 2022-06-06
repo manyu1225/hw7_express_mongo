@@ -1,0 +1,399 @@
+{
+	"info": {
+		"_postman_id": "3b342865-7c86-4fe8-8653-3da13e863823",
+		"name": "hw7_express_mongo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9557020"
+	},
+	"item": [
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"HELLOYO\",\r\n\"email\": \"testi42@gmail.com\",\r\n\"password\": \"a12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/user/sign_up",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"HELLOYO\",\r\n  \"email\": \"testi42@gmail.com\",\r\n  \"password\": \"a12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/user/sign_in",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重設密碼",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQzMzg1LCJleHAiOjE2NTQ1NDY5ODV9.1Drmvj2AEHN9gI8yYoIMSrUmF-1yYJxHBCpvMbewU-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"password\": \"a12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/user/updatePassword",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資料",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQzMzg1LCJleHAiOjE2NTQ1NDY5ODV9.1Drmvj2AEHN9gI8yYoIMSrUmF-1yYJxHBCpvMbewU-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/user/profile",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新個人資料",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQxNjY4LCJleHAiOjE2NTQ1NDUyNjh9.8hBPAAxrIYxY8NOcQUj_SR77fN_rvOGXQoBaxeoFrWM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"HELLOYO222\",\r\n  \"photo\": \"XAAAAX\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "張貼個人動態",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQzMzg1LCJleHAiOjE2NTQ1NDY5ODV9.1Drmvj2AEHN9gI8yYoIMSrUmF-1yYJxHBCpvMbewU-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"HELLOYO\",\r\n\"type\": \"group\",\r\n\"tags\": \"sssddddss\",\r\n\"image\": \"XXXX\",\r\n\"content\": \"ContentContentCont333ent\",\r\n\"comments\": \"123\",\r\n\"user\": \"629e3c2b694ef85031bba9d0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/post",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "觀看搜尋的動態",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQzMzg1LCJleHAiOjE2NTQ1NDY5ODV9.1Drmvj2AEHN9gI8yYoIMSrUmF-1yYJxHBCpvMbewU-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/post?q=ContentConte&s=asc",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "ContentConte"
+						},
+						{
+							"key": "s",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "觀看所有動態",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQzMzg1LCJleHAiOjE2NTQ1NDY5ODV9.1Drmvj2AEHN9gI8yYoIMSrUmF-1yYJxHBCpvMbewU-E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/post",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/post/629e4d96b9eb4fc5146322ef",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"629e4d96b9eb4fc5146322ef"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上傳",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPMjIyIiwiaWF0IjoxNjU0NTQ1ODc4LCJleHAiOjE2NTQ1NDk0Nzh9.qVx5gxhs3kKu_GnxOvKV6JkNRYJ5YdrtSymwS1pf7mo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "圖片一",
+							"type": "file",
+							"src": "/C:/Users/alexh/OneDrive/圖片/1172843888.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://young-ravine-47069.herokuapp.com/upload",
+					"protocol": "http",
+					"host": [
+						"young-ravine-47069",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOWUzYzJiNjk0ZWY4NTAzMWJiYTlkMCIsIm5hbWUiOiJIRUxMT1lPIiwiaWF0IjoxNjU0NTM3NjYzLCJleHAiOjE2NTQ1NDEyNjN9.wvyqcJlN_L_P6evn6sdZwf7okItJt6ZFS_jK-Jd40fw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localUrl",
+			"value": "http://localhost",
+			"type": "string"
+		}
+	]
+}
