@@ -1,0 +1,5 @@
+node_modules/
+*.env
+README.md
+posts_HEROKU_HW6.postman_collection.json
+swagger_output.json
