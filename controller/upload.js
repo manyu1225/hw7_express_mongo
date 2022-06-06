@@ -10,7 +10,15 @@ const UploadController = {
   async uploadFile(req, res, next) {
     handleErrorAsync(async (req, res, next) => {
       if (!req.files.length) {
-        return next(appError(400, "尚未上傳檔案", next));
+        return appError(httpStatus.BAD_REQUES, "尚未上傳檔案", next);
+      }
+      const dimensions = sizeOf(req.files[0].buffer);
+      if (dimensions.width !== dimensions.height) {
+        return appError(
+          httpStatus.BAD_REQUES,
+          "圖片長寬不符合 1:1 尺寸。",
+          next
+        );
       }
       const client = new ImgurClient({
         clientId: process.env.IMGUR_CLIENT_ID,
@@ -22,7 +30,7 @@ const UploadController = {
         type: "base64",
         album: process.env.IMGUR_ALBUM_ID,
       });
-      handleSuccess(res, httpStatus.OK, { url: response.data.link });
+      handleSuccess(res, httpStatus.OK, response.data.link);
     })(req, res, next);
   },
 };
